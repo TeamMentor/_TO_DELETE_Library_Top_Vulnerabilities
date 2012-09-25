@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<TeamMentor_Article Metadata_Hash="349567652" Content_Hash="-256852793">
+  <Metadata>
+    <Id>fc84b8cb-3abb-4a78-a7dc-60caa431a26c</Id>
+    <Id_History>6e0918c1-90db-46d5-9f0e-8a98ddbcd7d5,</Id_History>
+    <Library_Id>386553fa-9f33-4b11-b0bc-eb64b8d787ce</Library_Id>
+    <Title>Hash And Salt Passwords</Title>
+    <Category>Cryptographic Storage</Category>
+    <Phase>Implementation</Phase>
+    <Technology>Java</Technology>
+    <Type>Guideline</Type>
+    <DirectLink>Hash And Salt Passwords</DirectLink>
+    <Tag />
+    <Security_Demand />
+    <Author />
+    <Priority>2</Priority>
+    <Status />
+    <Source>SI</Source>
+  </Metadata>
+  <Content Sanitized="true" DataType="Html">
+    <Data><![CDATA[<h1>Applies to</h1>
+  <ul>
+    <li>Applications written using Servlets or JSP.</li>
+  </ul>
+  <h1>What to Do</h1>
+  <p>Do not directly store passwords in your application. Instead hash the password and use a salt.</p>
+  <h1>Why</h1>
+  <p>The original password cannot be retrieved from the hash. This means if your application, database or server is compromised, password lists will not be disclosed.</p>
+  <h1>When</h1>
+  <p>If your application authenticates users and won't ever need to retrieve the original password, then do not store them.</p>
+  <h1>How</h1>
+  <p>The following steps show how to avoid storing passwords:</p>
+  <ol>
+    <li>
+      <p>
+        <strong>Generate the&amp;nbsp;salt.&amp;nbsp;</strong>It is recommended to have a longer salt because it provides a bigger input to the hash function and assuming that the password hash is compromised, it will take longer for an attacker to brute force the correct input that generated the hash. Always use <em>SecureRandom</em> and not <em>Random</em> to generate the salt.</p>
+      <p>Example of using <em>SecureRandom</em> to generate a random salt:</p>
+      <pre>public static byte[] generateSalt() throws NoSuchAlgorithmException<br />{<br />      // Note that salt is declared as private static byte[] and is<br />      // initialized to null.<br /><br />      if (salt == null)<br />      {<br />            SecureRandom srand = SecureRandom.getInstance("SHA1PRNG");<br /><br />            salt = new byte[4];<br />            srand.nextBytes(salt);<br />      }<br /><br />      return salt;<br />}</pre>
+    </li>
+    <li>
+      <p>
+        <strong>Hash the password and the salt. </strong>Choose a strong hashing algorithm that will not be easy for an attacker to break. The current recommendation is to use SHA-512 or stronger. </p>
+      <pre>public String hashCredentials(char[] pass, byte[] salt)<br />       throws GeneralSecurityException, IOException<br />{<br />      MessageDigest md;<br />      byte[] tempPass;<br />      byte[] digest;<br /><br />      md = MessageDigest.getInstance("SHA-512");<br />      //Convert char[] to byte[]<br />      tempPass = new byte[pass.length];<br />      for (int i = 0; i &lt; pass.length; i++)<br />      {<br />            tempPass[i] = (byte)pass[i];<br />      }<br />      md.update(tempPass);<br />      md.update(salt);<br />      digest = md.digest();<br />      md.reset();<br />      //Clean tempPass<br />      for (int i = 0; i &lt; tempPass.length; i++)<br />      {<br />            tempPass[i] = 0;<br />      }<br /><br />      return new String(digest);<br />}</pre>
+    </li>
+    <li>
+      <p>
+        <strong>Choose a number of times to iterate the hash</strong>. This increases the computation time of the final hash. This can help prevent issues such as rainbow table attacks, since the time to calculate one hash iterated many times is relatively small, but to perform this same calculation for many passwords is relatively large. </p>
+    </li>
+    <li>
+      <p>
+        <strong>Store the hash and the salt.</strong> Store the hash in the file or database of your choosing. It is important to store both the hash and the salt, because the salt will have to be used when comparing user entered passwords to the hashed value.</p>
+    </li>
+    <li>
+      <p>
+        <strong>Implement password verification.</strong> During authentication, the password entered by the user should be checked against the hashed and salted value. To do this, retrieve the hash value and the salt from password storage. Concatenate user input with the stored salt, hash the resulting string and compare the resulting string against the stored hash. If the resulting hash is the same as the stored hash, the user has entered the correct password.</p>
+    </li>
+  </ol>
+  <p>
+    <strong>Note:</strong> Never store the user credentials or their hashes on the client side (e.g. in cookies, hidden fields, etc.). Use sessions when there is a need to track the user or store their hashed credentials. For more information, consult the Session Management section.</p>
+  <h1>Solution Example</h1>
+  <p>The following code validates the user based on a&amp;nbsp;given username and password. It hashes the password with a salt. Then it compares the username and the produced hash against the data stored in the backend database. Therefore, the password is not stored in the database.</p>
+  <pre>public boolean validateUser(String user, char[] pass)<br />{<br />      ...<br />      // Hash the credentials<br />      try<br />      {<br />            passHash = hashCredentials(pass, salt);<br />      }<br />      catch (GeneralSecurityException gse)<br />      {<br />            // Add the appropriate logging and exception handling mechanisms<br />            return false;<br />      }<br />      catch (IOException ioe)<br />      {<br />            // Add the appropriate logging and exception handling mechanisms<br />            return false;<br />      }<br /><br />      // Query the credential store and execute the rest of the authentication steps<br />      ...<br />}<br />public String hashCredentials(char[] pass, byte[] salt)<br />       throws GeneralSecurityException, IOException<br />{<br />      MessageDigest md;<br />      byte[] tempPass;<br />      byte[] digest;<br /><br />      md = MessageDigest.getInstance("SHA-512");<br />      //Convert char[] to byte[]<br />      tempPass = new byte[pass.length];<br />      for (int i = 0; i &lt; pass.length; i++)<br />      {<br />            tempPass[i] = (byte)pass[i];<br />      }<br />      md.update(tempPass);<br />      md.update(salt);<br />      digest = md.digest();<br />      md.reset();<br />      //Clean tempPass<br />      for (int i = 0; i &lt; tempPass.length; i++)<br />      {<br />            tempPass[i] = 0;<br />      }<br /><br />      return new String(digest);<br />}</pre>
+  <h1>Additional Resources</h1>
+  <ul>
+    <li>For more information about securely generating random numbers, see: Documentation for <a href="http://download.oracle.com/javase/1.4.2/docs/api/java/security/SecureRandom.html">Class SecureRandom</a> in Java SDK.</li>
+  </ul>
+  <ul>
+  </ul>]]></Data>
+  </Content>
+</TeamMentor_Article>

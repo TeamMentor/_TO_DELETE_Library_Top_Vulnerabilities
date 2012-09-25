@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<TeamMentor_Article Metadata_Hash="-100525814" Content_Hash="96692520">
+  <Metadata>
+    <Id>3490197b-6342-476e-9ed2-fa58e094448f</Id>
+    <Id_History>db8663bc-c0ee-4fba-8eb3-95f777c97a00,</Id_History>
+    <Library_Id>386553fa-9f33-4b11-b0bc-eb64b8d787ce</Library_Id>
+    <Title>Hash And Salt Passwords for Storage</Title>
+    <Category>Encryption</Category>
+    <Phase>Implementation</Phase>
+    <Technology>Native Code</Technology>
+    <Type>Guideline</Type>
+    <DirectLink>Hash And Salt Passwords for Storage</DirectLink>
+    <Tag />
+    <Security_Demand />
+    <Author />
+    <Priority />
+    <Status />
+    <Source>SI</Source>
+  </Metadata>
+  <Content Sanitized="true" DataType="Html">
+    <Data><![CDATA[<h1>Applies to</h1>
+  <ul>
+    <li>C++</li>
+  </ul>
+  <h1>What to Do</h1>
+  <p>Hash and salt stored passwords.</p>
+  <h1>Why</h1>
+  <p>Storing hashes instead of plain-text passwords assures that an attacker cannot easily recover the passwords if he gains access to the password files. Adding salt to hashed files makes hashes much harder to break with dictionary attacks.</p>
+  <h1>When</h1>
+  <p>Hash and salt passwords whenever storing them.</p>
+  <h1>How</h1>
+  <p>Perform the following actions to hash and salt stored passwords:</p>
+  <ol>
+    <li>
+      <p>
+        <strong>Generate a random salt value.</strong> Each bit of salt doubles the memory and computational requirements for dictionary attacks. Recommended salt lengths are 32-64bit. Use a random number generator of your choice to generate a random number of required size. Use this number as the salt.</p>
+    </li>
+    <li>
+      <p>
+        <strong>Concatenate the password and the salt.</strong> Use string functions to concatenate the password and the salt. Make sure your buffer is large enough to store the concatenated string to prevent buffer overflows.</p>
+    </li>
+    <li>
+      <p>
+        <strong>Hash the password and the salt.</strong> Use a strong cryptographic hashing algorithm, such as SHA256, to hash the concatenated password and salt. Different platforms have different APIs for using cryptographic hash functions.</p>
+      <ul>
+        <li>
+          <p>
+            <strong>Windows CryptCreateHash.</strong>&amp;nbsp; For native Windows applications, SHA1 is acceptable. SHA1 is not as strong as SHA256, but it's still a strong cryptographic hash function. To use SHA256, the CryptAcquireContext function has to be called with&amp;nbsp; PROV_RSA_AES instead of PROV_RSA_FULL as the argument for the dwProvType parameter. The function to generate cryptographic hashes on Windows is CryptCreateHash. </p>
+        </li>
+        <li>
+          <p>
+            <strong>Unix crypt(3).</strong> Unix platforms offer a native API for hashing and salting passwords. The implementation of this function is different for different platforms. More information about the crypt(3) API can be retrieved by running man crypt 3 command on the UNIX-type system. Crypt(3) can be used to hash and salt passwords for storage and to verify entered passwords against stored passwords.</p>
+        </li>
+        <li>
+          <p>
+            <strong>.NET SHA256.</strong> The .NET framework includes a SHA256 class. The SHA256 class has a ComputeHash public function, which may be used to generate SHA256 hashes in managed code.</p>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <p>
+        <strong>Store the hash and the salt.</strong> Store the hash in the file or database of your choosing. It is important to store both the hash and the salt, because the salt will have to be used when comparing user entered passwords to the hashed value.</p>
+    </li>
+    <li>
+      <p>
+        <strong>Implement password verification.</strong> During authentication, the password entered by the user should be checked against the hashed and salted value. To do this, retrieve the hash value and the salt from password storage. Concatenate user input with the stored salt, hash the resulting string and compare the resulting string against the stored hash. If the resulting hash is the same as the stored hash, the user has entered the correct password.</p>
+    </li>
+  </ol>
+  <h1>Additional Resources</h1>
+  <ul>
+    <li>For more information about CryptCreateHash(), please see <a href="http://msdn.microsoft.com/en-us/library/aa379908(VS.85).aspx">http://msdn.microsoft.com/en-us/library/aa379908(VS.85).aspx</a></li>
+    <li>For more information about cryptographic algorithms supported by CryptCreateHash(), please see <a href="http://msdn.microsoft.com/en-us/library/aa375545(v=VS.85).aspx">http://msdn.microsoft.com/en-us/library/aa375545(v=VS.85).aspx</a></li>
+    <li>For more information about CryptAcquireContext, please see <a href="http://msdn.microsoft.com/en-us/library/aa379886(VS.85).aspx">http://msdn.microsoft.com/en-us/library/aa379886(VS.85).aspx</a></li>
+    <li>For more information about crypt(3) on Linux, please see <a href="http://www.kernel.org/doc/man-pages/online/pages/man3/crypt.3.html">http://www.kernel.org/doc/man-pages/online/pages/man3/crypt.3.html</a></li>
+    <li>For more information about the SHA256 .NET class, please see <a href="http://msdn.microsoft.com/en-us/library/system.security.cryptography.sha256.aspx">http://msdn.microsoft.com/en-us/library/system.security.cryptography.sha256.aspx</a></li>
+  </ul>]]></Data>
+  </Content>
+</TeamMentor_Article>

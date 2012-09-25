@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<TeamMentor_Article Metadata_Hash="165559103" Content_Hash="434688431">
+  <Metadata>
+    <Id>8653afe7-9420-4886-9bbe-d2abb3cd580d</Id>
+    <Id_History>98d86209-082c-4322-bd22-c9555ac43028,</Id_History>
+    <Library_Id>386553fa-9f33-4b11-b0bc-eb64b8d787ce</Library_Id>
+    <Title>How to Hash And Salt Passwords</Title>
+    <Category>Encryption</Category>
+    <Phase>Implementation</Phase>
+    <Technology>ASP.NET</Technology>
+    <Type>How To</Type>
+    <DirectLink>How to Hash And Salt Passwords</DirectLink>
+    <Tag />
+    <Security_Demand />
+    <Author />
+    <Priority />
+    <Status />
+    <Source>SI</Source>
+  </Metadata>
+  <Content Sanitized="true" DataType="Html">
+    <Data><![CDATA[<h1>Applies to</h1>
+  <ul>
+    <li>ASP.NET 4.0</li>
+  </ul>
+  <h1>Summary</h1>
+  <p>Use a hashing algorithm, such as SHA256,&amp;nbsp;to store passwords. Make sure to&amp;nbsp;salt the hashes.&amp;nbsp;</p>
+  <h1>Step 1. Compute the Salt</h1>
+  <p>You can compute the salt value by using the <i>RNGCryptoServiceProvider </i>class, as shown in the following code example. </p>
+  <pre>using System.Security.Cryptography;<br />...<br />private static string CreateSalt(int size){<br />    // Generate a cryptographic random number using the cryptographic <br />    // service provider<br />    RNGCryptoServiceProvider rng = new RNGCryptoServiceProvider();<br />    byte[] buff = new byte[size];<br />    rng.GetBytes(buff);<br />    // Return a Base64 string representation of the random number<br />    return Convert.ToBase64String(buff);<br />}  </pre>
+  <p>
+    <b>Note:</b>&amp;nbsp;If you use the ASP.NET SQL Server membership provider, you can configure it to store password hashes with added salt by setting <i>passwordFormat="Hashed"</i> on the provider configuration.&amp;nbsp;</p>
+  <h1>Step 2. Combine Password and Salt</h1>
+  <p>Simply concatenate the password and the salt.</p>
+  <h1>Step 3. Hash the Password and the Salt</h1>
+  <p>The following code example shows how to use a hashing algorithm, such as SHA256, to hash data. </p>
+  <pre>using System.Security.Cryptography;<br />...<br />// Create a new instance of the hash crypto service provider.<br />HashAlgorithm hashAlg = new SHA256CryptoServiceProvider(); <br />// Convert the data to hash to an array of Bytes.<br />byte[] bytValue = System.Text.Encoding.UTF8.GetBytes(stringDataToHash);<br />// Compute the Hash. This returns an array of Bytes.<br />byte[] bytHash = hashAlg.ComputeHash(bytValue);<br />// Optionally, represent the hash value as a base64-encoded string, <br />// For example, if you need to display the value or transmit it over a network.<br />string base64 = Convert.ToBase64String(bytHash);</pre>
+  <h1>Step 4. Store the Hash and the Salt</h1>
+  <p>Store the hash and the salt in the location of your choosing. Make sure to store the salt along with the hash, because the salt is necessary for computing hashes when checking user entered passwords.</p>
+  <hr />
+  <p>Adapted from Microsoft patterns &amp; practices guidance. </p>]]></Data>
+  </Content>
+</TeamMentor_Article>
