@@ -2,7 +2,7 @@
 <TeamMentor_Article Metadata_Hash="0" Content_Hash="0">
   <Metadata>
     <Id>00000000-0000-0000-0000-0000003f0295</Id>
-    <Library_Id>f798e6e6-1732-4172-9c47-9621d914efcd</Library_Id>
+    <Library_Id>386553fa-9f33-4b11-b0bc-eb64b8d787ce</Library_Id>
     <Title>Use Positive Input Validation</Title>
     <Category>Validation</Category>
     <Phase>Implementation</Phase>
@@ -14,7 +14,7 @@
     <Status />
   </Metadata>
   <Content Sanitized="false" DataType="WikiText">
-    <Data><![CDATA[==What to Do==
+    <Data><![CDATA[<div id ='tm_datatype_wikitext'>==What to Do==
 
 Validate all user input by using white-list/positive input validation. White-list input validation means allowing only input that is explicitly defined as valid, as opposed to black-list input validation, which filters out known bad input.
 
@@ -34,6 +34,6 @@ To validate all user input using white-list input validation:
 # **Validate format.** If the input type has a specific pattern, such as a date or a phone number, add code to use regular expressions to make sure user input matches the input type specified by the application. Use regular expressions to enforce strong password requirements.
 # **Validate range.** Restrict the acceptable range of numerical input by comparing the input to the maximum and minimum acceptable values.
 # **(Optional) Reject and respond to known bad input.** This step does not add much actual security, but it is included here to let you know that such an option exists. The input validation subsystem may check for known attack strings and respond to these likely attacks by doing things like logging detailed user information, alerting the administrator, blocking the user's IP address for some time, and displaying an error message to the attacker informing that you are onto him and reminding him of the consequences.
-# **(Optional) Encode input.** If the input is going to be displayed back through the web application, consider adding code to encode it to prevent Cross-Site Scripting attacks.]]></Data>
+# **(Optional) Encode input.** If the input is going to be displayed back through the web application, consider adding code to encode it to prevent Cross-Site Scripting attacks.</div>]]></Data>
   </Content>
 </TeamMentor_Article>

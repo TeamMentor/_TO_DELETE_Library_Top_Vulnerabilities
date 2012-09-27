@@ -2,7 +2,7 @@
 <TeamMentor_Article Metadata_Hash="0" Content_Hash="0">
   <Metadata>
     <Id>00000000-0000-0000-0000-00000038e482</Id>
-    <Library_Id>f798e6e6-1732-4172-9c47-9621d914efcd</Library_Id>
+    <Library_Id>386553fa-9f33-4b11-b0bc-eb64b8d787ce</Library_Id>
     <Title>Set the HTTPOnly and Secure Flags on Session Cookies</Title>
     <Category>Session Management</Category>
     <Phase>Implementation</Phase>
@@ -14,7 +14,7 @@
     <Status />
   </Metadata>
   <Content Sanitized="false" DataType="WikiText">
-    <Data><![CDATA[==What to Do==
+    <Data><![CDATA[<div id ='tm_datatype_wikitext'>==What to Do==
 
 Set the //Secure// and //HTTPOnly// flags on all sensitive cookies, including session cookies.
 
@@ -32,6 +32,6 @@ To set the //Secure// and //HTTPOnly// flags on all sensitive cookies:
 # **Identify sensitive cookies.** Session cookies should always be considered sensitive. Enumerate all cookies used by the application. Make a list of cookies that may contain sensitive information.
 # **Identify code that creates sensitive cookies.** For each sensitive cookie in the list, find the code that creates that cookie.
 # **Set the //Secure// and //HTTPOnly// flags for each sensitive cookie.** For each piece of code that creates a sensitive cookie, add code that sets the //Secure// and //HTTPOnly// flags for the cookie. Make sure, that when the //Secure// attribute is set for a cookie, it is in response to a request that was made over HTTPS and not HTTP.
-# **Configure the platform.** Many platform have configuration options that allow setting the //Secure// and //HTTPOnly// flags for session cookies. Please refer to your platform's documentation for information about whether this functionality is available and how to use it.]]></Data>
+# **Configure the platform.** Many platform have configuration options that allow setting the //Secure// and //HTTPOnly// flags for session cookies. Please refer to your platform's documentation for information about whether this functionality is available and how to use it.</div>]]></Data>
   </Content>
 </TeamMentor_Article>

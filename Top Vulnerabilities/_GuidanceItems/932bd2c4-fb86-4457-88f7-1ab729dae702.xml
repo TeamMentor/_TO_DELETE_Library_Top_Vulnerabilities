@@ -3,7 +3,7 @@
   <Metadata>
     <Id>932bd2c4-fb86-4457-88f7-1ab729dae702</Id>
     <Id_History>3b87587a-1a9c-4bae-885a-ba3c65a62479,</Id_History>
-    <Library_Id>26bd1a04-beed-4a66-917d-b6ab0a7d634c</Library_Id>
+    <Library_Id>386553fa-9f33-4b11-b0bc-eb64b8d787ce</Library_Id>
     <Title>How to Test for Cross-Site Request Forgery (CSRF) Vulnerabilities</Title>
     <Category>Session Management</Category>
     <Phase>Test</Phase>
