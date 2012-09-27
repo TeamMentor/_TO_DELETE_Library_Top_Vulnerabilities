@@ -14,7 +14,7 @@
     <Status />
   </Metadata>
   <Content Sanitized="false" DataType="WikiText">
-    <Data><![CDATA[<div id ='tm_datatype_wikitext'>==What to Do==
+    <Data><![CDATA[==What to Do==
 
 Validate all user input by using white-list/positive input validation. White-list input validation means allowing only input that is explicitly defined as valid, as opposed to black-list input validation, which filters out known bad input.
 
@@ -34,6 +34,6 @@ To validate all user input using white-list input validation:
 # **Validate format.** If the input type has a specific pattern, such as a date or a phone number, add code to use regular expressions to make sure user input matches the input type specified by the application. Use regular expressions to enforce strong password requirements.
 # **Validate range.** Restrict the acceptable range of numerical input by comparing the input to the maximum and minimum acceptable values.
 # **(Optional) Reject and respond to known bad input.** This step does not add much actual security, but it is included here to let you know that such an option exists. The input validation subsystem may check for known attack strings and respond to these likely attacks by doing things like logging detailed user information, alerting the administrator, blocking the user's IP address for some time, and displaying an error message to the attacker informing that you are onto him and reminding him of the consequences.
-# **(Optional) Encode input.** If the input is going to be displayed back through the web application, consider adding code to encode it to prevent Cross-Site Scripting attacks.</div>]]></Data>
+# **(Optional) Encode input.** If the input is going to be displayed back through the web application, consider adding code to encode it to prevent Cross-Site Scripting attacks.]]></Data>
   </Content>
 </TeamMentor_Article>

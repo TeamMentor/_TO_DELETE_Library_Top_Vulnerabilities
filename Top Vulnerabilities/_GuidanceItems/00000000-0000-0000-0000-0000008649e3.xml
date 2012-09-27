@@ -14,7 +14,7 @@
     <Status />
   </Metadata>
   <Content Sanitized="false" DataType="WikiText">
-    <Data><![CDATA[<div id ='tm_datatype_wikitext'>==What to Do==
+    <Data><![CDATA[==What to Do==
 
 Understand the context in which your data will be used and the encoding that will be expected. This is especially important when transmitting data between different components, or when generating outputs that can contain multiple encodings at the same time, such as web pages or multi-part mail messages. Study all expected communication protocols and data representations to determine the required encoding strategies.
 
@@ -52,6 +52,6 @@ To escape HTML characters in user input:
 # **Apply the encoding.** After identifying the echoed input and determining the appropriate encoding method, apply the encoding before the input is returned to the client. There are different encoding libraries available. Different libraries have different capabilities and weaknesses. Please refer to the vendor's documentation for each potential encoding library.
 
 ==Additional Resources==
-*For the XSS Prevention Cheat Sheet, please see https://www.owasp.org/index.php/XSS_(Cross_Site_Scripting)_Prevention_Cheat_Sheet</div>]]></Data>
+*For the XSS Prevention Cheat Sheet, please see https://www.owasp.org/index.php/XSS_(Cross_Site_Scripting)_Prevention_Cheat_Sheet]]></Data>
   </Content>
 </TeamMentor_Article>

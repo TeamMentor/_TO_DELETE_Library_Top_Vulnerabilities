@@ -14,7 +14,7 @@
     <Status />
   </Metadata>
   <Content Sanitized="false" DataType="WikiText">
-    <Data><![CDATA[<div id ='tm_datatype_wikitext'>==What to Do==
+    <Data><![CDATA[==What to Do==
 
 Ensure that error messages only contain minimal details that are useful to the intended audience, and nobody else. The messages need to strike the balance between being too cryptic and not being cryptic enough. They should not necessarily reveal the methods that were used to determine the error. Such detailed information can be used to refine the original attack to increase the chances of success.
 
@@ -38,6 +38,6 @@ Perform the following actions to prevent disclosure of sensitive information in 
 ## **System information.** System information, such as Operating System version, network names, internal network addresses, etc should not be included in error messages because it may help an attacker identify vulnerable software, choose exploits, or attack other systems on the network.
 ## **User account information.** Information such as usernames, personal names, e-mail addresses, or other user information should not be revealed in error messages, because it may help an attacker attack that user account.
 ## **Secrets.** It goes without saying that secret information, such as passwords, password hashes, cardholder data, etc should not be disclosed in error messages.
-# **Use simple error messages.** Rewrite code that displays verbose error messages that display sensitive information to the user to display new, simple error messages.</div>]]></Data>
+# **Use simple error messages.** Rewrite code that displays verbose error messages that display sensitive information to the user to display new, simple error messages.]]></Data>
   </Content>
 </TeamMentor_Article>

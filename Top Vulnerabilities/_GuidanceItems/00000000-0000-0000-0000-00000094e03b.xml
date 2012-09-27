@@ -14,7 +14,7 @@
     <Status />
   </Metadata>
   <Content Sanitized="false" DataType="WikiText">
-    <Data><![CDATA[<div id ='tm_datatype_wikitext'>==What to Do==
+    <Data><![CDATA[==What to Do==
 
 Allow only trusted hosts to connect to the database server.
 
@@ -28,6 +28,6 @@ Perform the following actions to restrict access to your SQL Server:
 
 # **Restrict access from the outside.** Configure the firewall to make sure that SQL server ports are not visible from outside of the perimeter network.
 # **Restrict access from within the perimeter.** Restrict direct access by unauthorized internal hosts via internal firewalls and port filtering.
-# **Minimize exposure.** The production database server should only be accessible from the application server(s) it works with and a minimum set of other maintenance systems for monitoring, external logging, backup, and administration. Development and production systems should not share the same database server, and development machines should not have access to the production servers.</div>]]></Data>
+# **Minimize exposure.** The production database server should only be accessible from the application server(s) it works with and a minimum set of other maintenance systems for monitoring, external logging, backup, and administration. Development and production systems should not share the same database server, and development machines should not have access to the production servers.]]></Data>
   </Content>
 </TeamMentor_Article>

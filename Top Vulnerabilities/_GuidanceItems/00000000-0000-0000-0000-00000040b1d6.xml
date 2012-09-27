@@ -14,7 +14,7 @@
     <Status />
   </Metadata>
   <Content Sanitized="false" DataType="WikiText">
-    <Data><![CDATA[<div id ='tm_datatype_wikitext'>==What to Do==
+    <Data><![CDATA[==What to Do==
 
 Include unique tokens in HTTP requests when performing sensitive operations to prevent Cross-Site Request Forgery (CSRF).
 
@@ -30,6 +30,6 @@ To include unique tokens in HTTP requests:
 # **Identify code that performs sensitive operations.** Identify all pages that are involved in performing sensitive operations - this includes both the pages that link to sensitive operations and the code that actually carries out the sensitive operations.
 # **Choose a method for generating unique tokens.** There are different ways to generate unique tokens. One approach is to generate random tokens for each request. Another approach is to use an API designed specifically for mitigating CSRF, such as ESAPI. Do not use session IDs as anti-CSRF tokens.
 # **Add unique tokens to HTTP requests.** Add code that uses the chosen method of generating unique tokens. Add code that adds the generated unique tokens to the pages that link to sensitive operations in hidden fields.
-# **Add token validation code.** Add code to the pages that carry out sensitive operations that validates the unique tokens to make sure that they have been generated on the server-side.</div>]]></Data>
+# **Add token validation code.** Add code to the pages that carry out sensitive operations that validates the unique tokens to make sure that they have been generated on the server-side.]]></Data>
   </Content>
 </TeamMentor_Article>

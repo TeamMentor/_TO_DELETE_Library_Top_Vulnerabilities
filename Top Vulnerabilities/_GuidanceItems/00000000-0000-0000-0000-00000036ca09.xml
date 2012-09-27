@@ -8,7 +8,7 @@
     <Phase>Implementation</Phase>
     <Technology>Native Code</Technology>
     <Type>Guideline</Type>
-    <DirectLink>Don&amp;#39;t Use User Input in Format Strings</DirectLink>
+    <DirectLink>Don&amp;amp;amp;amp;#39;t Use User Input in Format Strings</DirectLink>
     <Author />
     <Priority />
     <Status />
