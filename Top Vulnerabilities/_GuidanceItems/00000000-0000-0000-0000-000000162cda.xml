@@ -16,7 +16,7 @@
   <Content Sanitized="false" DataType="html">
     <Data><![CDATA[<h1>Applies to</h1>
   <ul>
-    <li>ASP.NET 4.0</li>
+    <li>ASP.NET 4.5 (Test)</li>
   </ul>
   <h1>What to Do</h1>
   <p>Encode user input displayed on pages.</p>
