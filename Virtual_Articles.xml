@@ -14,4 +14,13 @@
   <VirtualArticleAction Id="6947d991-5eb6-4433-b32a-897d77d447f2" Action="Redirect" Target_Id="00000000-0000-0000-0000-000000000000" Redirect_Uri="http://teammentor.net/article/6947d991-5eb6-4433-b32a-897d77d447f2" />
   <VirtualArticleAction Id="775c2307-9cd9-4dce-a419-6fe406fb1f20" Action="Redirect" Target_Id="00000000-0000-0000-0000-000000000000" Redirect_Uri="http://teammentor.net/article/775c2307-9cd9-4dce-a419-6fe406fb1f20" />
   <VirtualArticleAction Id="7d873b52-217e-43e8-8fe9-a5dcf52bf030" Action="Redirect" Target_Id="00000000-0000-0000-0000-000000000000" Redirect_Uri="http://teammentor.net/article/7d873b52-217e-43e8-8fe9-a5dcf52bf030" />
+  <VirtualArticleAction Id="8f94d6fd-ece9-40f8-8db6-2f2addb82fa3" Action="Redirect" Target_Id="00000000-0000-0000-0000-000000000000" Redirect_Uri="http://teammentor.net/article/8f94d6fd-ece9-40f8-8db6-2f2addb82fa3" />
+  <VirtualArticleAction Id="96928660-b73e-497c-a98e-e4856ff895e6" Action="Redirect" Target_Id="00000000-0000-0000-0000-000000000000" Redirect_Uri="http://teammentor.net/article/96928660-b73e-497c-a98e-e4856ff895e6" />
+  <VirtualArticleAction Id="9fec2088-1a0c-42ba-86c0-445afbc48f62" Action="Redirect" Target_Id="00000000-0000-0000-0000-000000000000" Redirect_Uri="http://teammentor.net/article/9fec2088-1a0c-42ba-86c0-445afbc48f62" />
+  <VirtualArticleAction Id="b119d5b9-bb51-4ea8-b6b2-e034e92c17be" Action="Redirect" Target_Id="00000000-0000-0000-0000-000000000000" Redirect_Uri="http://teammentor.net/article/b119d5b9-bb51-4ea8-b6b2-e034e92c17be" />
+  <VirtualArticleAction Id="bc3f332a-c395-486b-b095-6b7cc4935367" Action="Redirect" Target_Id="00000000-0000-0000-0000-000000000000" Redirect_Uri="http://teammentor.net/article/bc3f332a-c395-486b-b095-6b7cc4935367" />
+  <VirtualArticleAction Id="bfdf9875-69c4-43d2-978c-b9c09d8ca6c2" Action="Redirect" Target_Id="00000000-0000-0000-0000-000000000000" Redirect_Uri="http://teammentor.net/article/bfdf9875-69c4-43d2-978c-b9c09d8ca6c2" />
+  <VirtualArticleAction Id="c2b6ad74-7e7f-4b4d-8a55-8b55933b54ac" Action="Redirect" Target_Id="00000000-0000-0000-0000-000000000000" Redirect_Uri="http://teammentor.net/article/c2b6ad74-7e7f-4b4d-8a55-8b55933b54ac" />
+  <VirtualArticleAction Id="da9827ed-e835-49a8-b6d0-7feee8cb5a09" Action="Redirect" Target_Id="00000000-0000-0000-0000-000000000000" Redirect_Uri="http://teammentor.net/article/da9827ed-e835-49a8-b6d0-7feee8cb5a09" />
+  <VirtualArticleAction Id="f3dacae2-77f1-44d5-96d2-1a08318e4943" Action="Redirect" Target_Id="00000000-0000-0000-0000-000000000000" Redirect_Uri="http://teammentor.net/article/f3dacae2-77f1-44d5-96d2-1a08318e4943" />
 </ArrayOfVirtualArticleAction>
