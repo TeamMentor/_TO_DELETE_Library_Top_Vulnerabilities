@@ -3,12 +3,12 @@
   <Metadata>
     <Id>00000000-0000-0000-0000-00000036ca09</Id>
     <Library_Id>386553fa-9f33-4b11-b0bc-eb64b8d787ce</Library_Id>
-    <Title>Don&amp;#39;t Use User Input in Format Strings</Title>
+    <Title>Don't Use User Input in Format Strings</Title>
     <Category>Dangerous APIs</Category>
     <Phase>Implementation</Phase>
     <Technology>Native Code</Technology>
     <Type>Guideline</Type>
-    <DirectLink>Don&amp;amp;amp;amp;#39;t Use User Input in Format Strings</DirectLink>
+    <DirectLink>Don't Use User Input in Format Strings</DirectLink>
     <Author />
     <Priority />
     <Status />
